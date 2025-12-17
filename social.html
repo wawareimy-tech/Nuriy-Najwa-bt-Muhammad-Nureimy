@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>My Social Media - Nuriy Najwa</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --matcha:#88c788;
+            --strawberry:#ff84a1;
+            --soft-pink:#ffe9f0;
+            --text:#3b2a26;
+        }
+
+        *{box-sizing:border-box;}
+
+        body{
+            margin:0;
+            font-family:Arial, Helvetica, sans-serif;
+            background-image:url("FLOWERPATELS.gif");
+            background-size:cover;
+            background-attachment:fixed;
+            background-repeat:no-repeat;
+            color:var(--text);
+            overflow-x: hidden;
+        }
+
+        /* ❤️ FLOATING HEARTS FIX — ALWAYS ON TOP ❤️ */
+        #heart-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999999999; /* FIXED */
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -10px;
+            color: #ffb6c9;
+            font-size: 20px;
+            animation: floatUp 6s linear infinite;
+            opacity: 0.9;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) translateX(0); opacity:1; }
+            100% { transform: translateY(-120vh) translateX(30px); opacity:0; }
+        }
+
+
+  /* --- NEW CUTE SEARCH BAR STYLE --- */ 
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box input[type="text"] {
+    padding: 10px 14px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    width: 220px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    font-size: 14px;
+}
+
+.search-box button {
+    padding: 10px 18px;
+    border-radius: 25px;
+    border: none;
+    background: #ff84a1;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: 0.2s;
+}
+
+.search-box button:hover {
+    background: #ffadc4;
+    transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+
+
+
+        /* HEADER */
+        .top-bar{
+            background:var(--matcha);
+            color:white;
+            padding:12px 16px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            box-shadow:0 3px 6px rgba(0,0,0,0.18);
+        }
+
+        .logo-title{
+            font-family:'Pacifico', cursive;
+            font-size:34px;
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+        .logo-title span{ color:var(--strawberry); }
+
+        .logo-title img{
+            width:56px; height:56px; border-radius:8px; object-fit:cover;
+        }
+
+        /* NAV BAR */
+        .nav-wrapper{
+            background:var(--soft-pink);
+            box-shadow:0 2px 4px rgba(0,0,0,0.12);
+        }
+        .main-nav{
+            max-width:1120px; margin:0 auto;
+            padding:8px 10px;
+            display:flex; justify-content:center;
+            gap:14px; flex-wrap:wrap;
+        }
+        .main-nav a{
+            color:#834b55; font-weight:700;
+            padding:6px 12px; border-radius:18px;
+        }
+
+        /* INFO BAR */
+        .info-bar{
+            background:#ffdddf;
+            color:#833b44;
+            text-align:center;
+            padding:10px;
+            font-weight:700;
+        }
+
+        /* CONTENT */
+        .content-wrapper{
+            min-height:70vh;
+            padding:40px 20px 70px;
+            display:flex; justify-content:center;
+        }
+        .card{
+            width:100%; max-width:900px;
+            padding:28px; border-radius:16px;
+            background:rgba(255,255,255,0.18);
+            backdrop-filter:blur(8px);
+            border:1px solid rgba(255,255,255,0.35);
+            box-shadow:0 8px 26px rgba(0,0,0,0.14);
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title{
+            font-family:'Pacifico', cursive;
+            font-size:30px;
+            color:white;
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        /* TikTok Card */
+        .tiktok-box{
+            background:white;
+            padding:18px;
+            border-radius:16px;
+            box-shadow:0 6px 16px rgba(0,0,0,0.15);
+            border:1px solid #ffd8e6;
+            max-width:700px;
+            margin:0 auto;
+        }
+
+        .tiktok-header{
+            display:flex;
+            align-items:center;
+            gap:14px;
+        }
+        .tiktok-header img{
+            width:60px;
+            height:60px;
+            border-radius:50%;
+            object-fit:cover;
+            border:3px solid var(--strawberry);
+        }
+
+        .stats{
+            display:flex;
+            gap:30px;
+            font-size:14px;
+            margin:18px 0;
+        }
+
+        .preview-grid{
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap:10px;
+            margin-top:18px;
+        }
+
+        .preview-grid img{
+            width:100%;
+            height:120px;
+            object-fit:cover;
+            border-radius:10px;
+        }
+
+        /* FOOTER */
+        footer{
+            background-color: var(--soft-pink);
+            text-align:center;
+            padding:12px;
+            color:#833b44;
+            border-top:1px solid #ffd2df;
+        }
+
+        /* AUTOPLAY BUTTON */
+        #enableSound {
+            display:none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 18px;
+            background: var(--strawberry);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-weight: bold;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 99999;
+        }
+    </style>
+
+
+
+
+
+
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="top-bar">
+    <div class="logo-title">
+        <img src="berrycat.png">
+        Nuriy's <span>Resume</span>
+    </div>
+
+    <form class="search-box">
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
+    </form>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrapper">
+    <div class="main-nav">
+        <a href="HOME.html">Home</a>
+        <a href="AboutMe.html">About Me</a>
+        <a href="Edu.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="socialmedia.html">Social Media</a>
+       
+    </div>
+</div>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+    ૮๑ˊ ꒳ ˋ๑ა Here is my cutest Social Media page! 💗✨
+</div>
+
+<!-- CONTENT -->
+<div class="content-wrapper">
+    <div class="card">
+
+        <h2 class="section-title">My Social Media ✨</h2>
+
+        <div style="text-align:center; margin-bottom:20px;">
+            <img src="eunsoo.jpg"
+                 style="width:120px; height:120px; border-radius:50%; object-fit:cover; border:4px solid #FFF0F5; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+            
+            <h3 style="margin-top:12px; color:#FFF0F5; font-family:'Pacifico', cursive;">
+                user5238247563227
+            </h3>
+        </div>
+
+        <div class="tiktok-box">
+
+            <div class="tiktok-header">
+                <img src="eunsoo.jpg">
+                <div>
+                    <div style="font-weight:800; font-size:18px;">user5238247563227</div>
+                    <div style="color:#556; font-size:14px;">@user5238247563227</div>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div><b>34</b> Following</div>
+                <div><b>11</b> Followers</div>
+                <div><b>1311</b> Likes</div>
+            </div>
+
+            <a href="https://www.tiktok.com/@user5238247563227?_r=1&_t=ZS-92EdBmTS3z5"
+               target="_blank"
+               style="display:block; background:#ff84a1; color:white; padding:10px 16px; text-align:center;
+                      border-radius:12px; font-weight:bold; margin:15px 0;">
+                Open My TikTok 💗📱
+            </a>
+
+            <div class="preview-grid">
+                <img src="zakirah.jpeg">
+                <img src="tujolima.jpeg">
+                <img src="water.jpeg">
+                <img src="dump1.jpeg">
+                <img src="dump2.jpeg">
+                <img src="dump3.jpeg">
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    © 2024 Nuriy's Website. All Rights Reserved.
+</footer>
+
+<!-- FLOATING HEARTS (MOVED TO VERY END FOR TOP LAYER) -->
+<div id="heart-container"></div>
+
+<!-- HIDDEN MUSIC -->
+<audio id="bgMusic" src="laufey.mp3" preload="auto"></audio>
+
+<button id="enableSound">Enable Music 🎵</button>
+
+<script>
+/* AUTOPLAY MUSIC */
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("enableSound");
+
+function tryPlay(){
+    music.volume = 0.6;
+    music.play().then(()=>{
+        btn.style.display = "none";
+    }).catch(()=>{
+        btn.style.display = "block";
+    });
+}
+
+window.addEventListener("load", () => setTimeout(tryPlay, 300));
+btn.addEventListener("click", () => {
+    music.play();
+    btn.style.display = "none";
+});
+
+/* FLOATING HEARTS */
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💗";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (18 + Math.random()*16) + "px";
+    heart.style.animationDuration = (4 + Math.random()*4) + "s";
+
+    document.getElementById("heart-container").appendChild(heart);
+
+    setTimeout(() => { heart.remove(); }, 8000);
+}
+
+setInterval(createHeart, 600);
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>My Resume - Nuriy Najwa bt Muhd Nureimy</title>
+
+    <!-- Pacifico cursive for logo/headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+        :root{
+            --matcha:#88c788;
+            --strawberry:#ff84a1;
+            --soft-pink:#ffe9f0;
+            --text:#3b2a26;
+            --glass: rgba(255,255,255,0.18);
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0; font-family:Arial, Helvetica, sans-serif;
+            background-image:url("FLOWERPATELS.gif");
+            background-size:cover; background-attachment:fixed; background-repeat:no-repeat;
+            color:var(--text); -webkit-font-smoothing:antialiased;
+        }
+        a{color:inherit;text-decoration:none}
+
+        /* HEADER */
+        .top-bar{background:var(--matcha); color:#fff; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 3px 6px rgba(0,0,0,0.18)}
+        .logo-title{font-family:'Pacifico',cursive; font-size:34px; display:flex; align-items:center; gap:10px; line-height:1}
+        .logo-title span{color:var(--strawberry)}
+        .logo-title img{width:56px;height:56px;border-radius:8px; object-fit:cover}
+/* --- NEW CUTE SEARCH BAR STYLE --- */ 
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box input[type="text"] {
+    padding: 10px 14px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    width: 220px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    font-size: 14px;
+}
+
+.search-box button {
+    padding: 10px 18px;
+    border-radius: 25px;
+    border: none;
+    background: #ff84a1;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: 0.2s;
+}
+
+.search-box button:hover {
+    background: #ffadc4;
+    transform: translateY(-2px);
+}
+
+        .nav-wrapper{background:var(--soft-pink); box-shadow:0 2px 4px rgba(0,0,0,0.12)}
+        .main-nav{max-width:1120px;margin:0 auto;padding:8px 10px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+        .main-nav a{color:#834b55;font-weight:700;padding:6px 12px;border-radius:18px}
+
+        .info-bar{background:#ffdddf;color:#833b44;text-align:center;padding:10px;font-weight:700}
+
+        /* CONTENT */
+        .content-wrapper{min-height:70vh;padding:40px 20px 70px;display:flex;justify-content:center}
+        .card{width:100%;max-width:1100px;padding:28px;border-radius:16px;background:rgba(255,255,255,0.18);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.35);box-shadow:0 8px 26px rgba(0,0,0,0.14)}
+
+        .section-title-small{
+            font-family:'Pacifico',cursive;
+            color:white;
+            margin:8px 0 14px;
+            font-size:26px;
+            text-align:center;
+        }
+
+        /* 🌸✨ SLIDESHOW AREA */
+        .slideshow-container-edu {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 20px auto;
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.35);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+        }
+        .slide-edu { display: none; position: relative; }
+        .slide-edu img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+        .caption-edu {
+            position: absolute;
+            bottom: 14px;
+            left: 18px;
+            padding: 8px 14px;
+            background: rgba(255,255,255,0.85);
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #4b2b25;
+        }
+
+        /* Animation slide kiri → kanan */
+        .fade-edu {
+            animation: fadeEdu 1.4s ease;
+        }
+        @keyframes fadeEdu {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Dots */
+        .dots-wrapper-edu { text-align:center; margin-top:10px; }
+        .dot-edu {
+            height: 14px;
+            width: 14px;
+            margin: 4px;
+            background-color: white;
+            border-radius: 50%;
+            display: inline-block;
+            border: 2px solid var(--strawberry);
+        }
+        .dot-edu.active {
+            background-color: var(--matcha);
+            transform: scale(1.25);
+            border-color:white;
+        }
+
+        /* ===== TIMELINE ===== */
+        .timeline {
+            margin: 6px 0 18px;
+            padding-left: 0;
+            list-style: none;
+            position: relative;
+        }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 18px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--matcha), var(--strawberry));
+            border-radius: 4px;
+            opacity: 0.9;
+        }
+        .timeline li {
+            position: relative;
+            padding: 12px 12px 12px 58px;
+            margin-bottom: 14px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.04);
+            backdrop-filter: blur(4px);
+        }
+        .timeline li::before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 18px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #fff;
+            border: 4px solid var(--matcha);
+        }
+        .timeline li.uni::before { border-color: var(--strawberry); }
+
+        .timeline .year { font-weight:800;color:white;font-size:14px;display:block;margin-bottom:6px }
+        .timeline .school { font-size:17px;font-weight:700;color:white }
+        .timeline .detail { margin-top:6px;font-size:13px;color:white }
+        .timeline .tag { position:absolute; right:10px; top:10px; font-size:22px; }
+
+        /* FOOTER */
+        .footer-bar{
+            background-color: var(--soft-pink);
+            color: black;
+            padding: 10px 20px;
+            position: relative;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 1px solid #ffd2df;
+        }
+        .footer-right2{
+            position: absolute;
+            right: 20px;
+        }
+        .music-btn2{
+            padding: 6px 14px;
+            border-radius: 6px;
+            border: none;
+            background-color: var(--strawberry);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+<!-- 🎵 HIDDEN AUDIO PLAYER -->
+<audio id="bgMusic" src="highschool_in_jakarta.mp3.mp3"></audio>
+
+<!-- HEADER -->
+<div class="top-bar">
+    <div class="logo-title">
+        <img src="berrycat.png" alt="berrycat">
+        Nuriy's <span>Resume</span>
+    </div>
+
+    <form class="search-box">
+        <input type="text" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrapper">
+    <div class="main-nav">
+        <a href="HOME.html">Home</a>
+        <a href="AboutMe.html">About Me</a>
+        <a href="Edu.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="social.html">Social Media</a>
+      
+    </div>
+</div>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+    ૮๑ˊ ꒳ ˋ๑ა Welcome to my Matcha Strawberry themed resume! 🍓🍵
+</div>
+
+<!-- CONTENT -->
+<div class="content-wrapper">
+    <div class="card">
+
+        <h3 class="section-title-small">My Education Journey <3</h3>
+
+        <!-- SLIDESHOW -->
+        <div class="slideshow-container-edu">
+
+            <div class="slide-edu fade-edu">
+                <img src="school1.jpeg">
+                <div class="caption-edu">My highschool friend 🏫✨</div>
+            </div>
+
+            <div class="slide-edu fade-edu">
+                <img src="school2.jpeg">
+                <div class="caption-edu">Growing, learning & becoming stronger 💗</div>
+            </div>
+
+            <div class="slide-edu fade-edu">
+                <img src="uitm1.jpeg">
+                <div class="caption-edu">A new chapter begins at UiTM 🍓🍵</div>
+            </div>
+
+            <div class="slide-edu fade-edu">
+                <img src="HGPIC4.jpeg">
+                <div class="caption-edu">just finished SPM 🌸</div>
+            </div>
+
+            <div class="slide-edu fade-edu">
+                <img src="HGPIC5.jpeg">
+                <div class="caption-edu">MY BELOVED HIGHSCHOOL CLASSMATES 🌸</div>
+            </div>
+
+            <div class="slide-edu fade-edu">
+                <img src="diploma3.jpeg">
+                <div class="caption-edu">jawab test 🌸</div>
+            </div>
+
+            <div class="slide-edu fade-edu">
+                <img src="diploma4.jpeg">
+                <div class="caption-edu">CDIM1101F🌸</div>
+            </div>
+
+            <div class="slide-edu fade-edu">
+                <img src="diplomaa.jpeg">
+                <div class="caption-edu">CDIM1105F <3 </div>
+            </div>
+
+
+            <div class="slide-edu fade-edu">
+                <img src="diplomaa1.jpeg">
+                <div class="caption-edu"> Paddle bot check point </div>
+            </div>
+
+
+            <div class="slide-edu fade-edu">
+                <img src="diplomaa2.jpeg">
+                <div class="caption-edu"> Zah masyamku </div>
+            </div>
+
+        </div>
+
+        <div class="dots-wrapper-edu">
+            <span class="dot-edu"></span>
+            <span class="dot-edu"></span>
+            <span class="dot-edu"></span>
+            <span class="dot-edu"></span>
+            <span class="dot-edu"></span>
+            <span class="dot-edu"></span>
+            <span class="dot-edu"></span>
+            <span class="dot-edu"></span>
+            <span class="dot-edu"></span>
+            <span class="dot-edu"></span>
+
+        </div>
+
+        <!-- TIMELINE -->
+        <ul class="timeline">
+            <li>
+                <span class="year">2010 — 2012</span>
+                <span class="school">Tadika Manja Bonda</span>
+                <div class="detail">Early childhood learning with creative play and arts.</div>
+                <div class="tag">👧🏻</div>
+            </li>
+
+            <li>
+                <span class="year">2013 — 2014</span>
+                <span class="school">SK Seri Amar Diraja</span>
+                <div class="detail">Early childhood learning with creative play and arts.</div>
+                <div class="tag">🌼</div>
+            </li>
+
+
+            <li>
+                <span class="year">2015 — 2017</span>
+                <span class="school">SK Ramuan China Besar</span>
+                <div class="detail">Primary religious & academic studies; active in school events.</div>
+                <div class="tag">📚</div>
+            </li>
+
+            <li>
+                <span class="year">2018 — 2023</span>
+                <span class="school">SMK Alauddin</span>
+                <div class="detail">Completed SPM; participated in clubs and student activities.</div>
+                <div class="tag">🏫</div>
+            </li>
+
+            <li class="uni">
+                <span class="year">2023 — Present</span>
+                <span class="school">UiTM Segamat — Diploma</span>
+                <div class="detail">Currently pursuing Diploma in Information Management.</div>
+                <div class="tag">🎓</div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-bar">
+    © 2024 Nuriy's Website. All Rights Reserved.
+
+    <div class="footer-right2">
+        <button class="music-btn2" onclick="toggleMusic()">Play Music 🎵</button>
+    </div>
+</footer>
+
+<script>
+/* SLIDESHOW */
+let eduSlideIndex = 0;
+showEduSlidesCute();
+
+function showEduSlidesCute() {
+    let slides = document.getElementsByClassName("slide-edu");
+    let dots = document.getElementsByClassName("dot-edu");
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        dots[i].classList.remove("active");
+    }
+
+    eduSlideIndex++;
+    if (eduSlideIndex > slides.length) { eduSlideIndex = 1; }
+
+    slides[eduSlideIndex - 1].style.display = "block";
+    dots[eduSlideIndex - 1].classList.add("active");
+
+    setTimeout(showEduSlidesCute, 2500);
+}
+
+/* MUSIC CONTROL */
+const bgMusic = document.getElementById("bgMusic");
+const musicBtn = document.querySelector(".music-btn2");
+
+function toggleMusic() {
+    if (bgMusic.paused) {
+        bgMusic.play();
+        musicBtn.textContent = "Pause Music ❌";
+    } else {
+        bgMusic.pause();
+        musicBtn.textContent = "Play Music 🎵";
+    }
+}
+</script>
+
+</body>
+</html>

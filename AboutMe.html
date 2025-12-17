@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>My Resume - Nuriy Najwa bt Muhd Nureimy</title>
+
+    <!-- Cursive font untuk "Nuriy's Resume" -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+
+
+/* ===== GLOBAL ===== */
+        :root{
+            --pink:#ff84a1;
+            --light-pink:#ffe9f0;
+            --accent:#833b44;
+            --bg-accent:#ffdddf;
+            --player-bg: rgba(255,255,255,0.06);
+        }
+
+        *{box-sizing: border-box;}
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("FLOWERPATELS.gif");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #3b2a26;
+            overflow-x: hidden;
+        }
+
+    /* CSS lain awak */
+
+    /* --- NEW CUTE SEARCH BAR STYLE --- */ 
+    .search-box {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .search-box input[type="text"] {
+        padding: 10px 14px;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        width: 220px;
+        background: white;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        font-size: 14px;
+    }
+
+    .search-box button {
+        padding: 10px 18px;
+        border-radius: 25px;
+        border: none;
+        background: #ff84a1;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 14px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        transition: 0.2s;
+    }
+
+    .search-box button:hover {
+        background: #ffadc4;
+        transform: translateY(-2px);
+    }
+
+
+
+        /* ===== GLOBAL ===== */
+        :root{
+            --matcha: #88c788;
+            --strawberry: #ff84a1;
+            --soft-pink: #ffe9f0;
+            --text-dark: #3b2a26;
+            --glass-white: rgba(255,255,255,0.22);
+            --glass-border: rgba(255,255,255,0.35);
+        }
+
+        html,body{ height:100%; margin:0; font-size:16px; }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("FLOWERPATELS.gif");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: var(--text-dark);
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+
+        a { text-decoration:none; color: inherit; }
+
+        /* ===== TOP HEADER (LOGO + SEARCH) ===== */
+        .top-bar {
+            background-color: var(--matcha);
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.18);
+            width: 100%;
+        }
+
+        /* --- Logo title: now cursive and a bit larger --- */
+        .logo-title {
+            font-size: 34px;                    /* increased for visibility */
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Pacifico', cursive;   /* ← cursive applied */
+            line-height: 1;
+        }
+
+        .logo-title span { color: var(--strawberry); font-size: 1.0em; }
+
+        .logo-title img { width: 70px; height: 70px; border-radius: 10px; object-fit:cover; }
+
+
+        /* ===== NAVIGATION BAR ===== */
+        .nav-wrapper { background-color: var(--soft-pink); box-shadow: 0 2px 4px rgba(0,0,0,0.15); }
+        .main-nav { max-width: 1120px; margin: 0 auto; padding: 8px 10px; display:flex; justify-content:center; gap:18px; flex-wrap:wrap; }
+        .main-nav a { color:#834b55; font-size:15px; font-weight:bold; padding:6px 12px; border-radius:20px; transition:0.2s; }
+        .main-nav a:hover { background-color: var(--matcha); color:#ffffff; }
+
+        /* ===== INFO BAR ===== */
+        .info-bar {
+            background-color: #ffdddf; color: #833b44; text-align: center; padding: 10px; font-size: 15px; font-weight: bold;
+        }
+
+        /* ===== CONTENT ===== */
+        .content-wrapper {
+            min-height: 70vh;
+            padding: 40px 20px 70px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* ===== GLASS CARD (TRANSPARENT) ===== */
+        .card {
+            background: var(--glass-white);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            max-width: 1100px;
+            width: 100%;
+            padding: 28px;
+            border-radius: 16px;
+            box-shadow: 0 8px 26px rgba(0,0,0,0.14);
+            overflow: hidden;
+        }
+
+        .intro {
+            display:flex;
+            gap:20px;
+            align-items:center;
+            flex-wrap:wrap;
+            margin-bottom:18px;
+        }
+
+        .intro-text h2 { margin:0; color: var(--matcha); font-size:24px; }
+        .intro-text p { margin:4px 0 8px; color: #4a3a36; }
+        .intro-text a { color: var(--strawberry); font-weight:700; }
+
+        /* PROFILE + ESSAY TRANSITION WRAPPER */
+        .profile-wrap {
+            display:grid;
+            grid-template-columns: 340px 1fr;
+            gap: 20px;
+            align-items:start;
+        }
+
+        @media (max-width:880px) { .profile-wrap { grid-template-columns: 1fr; } }
+
+        /* PHOTO COLUMN - stacked images, same size */
+        .photo-column {
+            display:flex;
+            flex-direction:column;
+            gap:12px;
+            align-items:center;
+        }
+
+        .photo-size {
+            width: 320px;
+            height: 260px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid rgba(255,255,255,0.45);
+            background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+            cursor: pointer;
+            transition: transform 320ms ease, box-shadow 260ms ease;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .photo-size img {
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            display:block;
+            transition: transform 450ms ease, filter 450ms ease;
+        }
+
+        .photo-size:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+
+        /* overlay summary on main photo */
+        .overlay-small {
+            position:absolute;
+            left:12px;
+            right:12px;
+            bottom:12px;
+            padding:10px 12px;
+            border-radius:10px;
+            background: rgba(255,255,255,0.9);
+            color: var(--text-dark);
+            transform: translateY(10px);
+            opacity: 0;
+            pointer-events:none;
+            transition: transform 360ms ease, opacity 260ms ease;
+            font-size:13px;
+        }
+
+        .photo-size.show .overlay-small,
+        .photo-size:hover .overlay-small { transform: translateY(0); opacity:1; pointer-events:auto; }
+
+        /* sub-photos stacked and same size */
+        .sub-photos {
+            width:100%;
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .thumb {
+            width:320px;
+            height:260px;
+            border-radius:12px;
+            overflow:hidden;
+            position:relative;
+            border: 2px solid rgba(255,255,255,0.35);
+            background: rgba(255,255,255,0.08);
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+            cursor:pointer;
+            transition: transform 220ms ease, box-shadow 220ms ease;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .thumb img { width:100%; height:100%; object-fit:cover; display:block; transition: transform 260ms ease; }
+
+        .thumb:hover { transform: translateY(-6px); box-shadow: 0 10px 26px rgba(0,0,0,0.12); }
+        .thumb:hover img { transform: scale(1.04); }
+
+        /* ESSAY CARD - also glass */
+        .essay-card {
+            border-radius: 12px;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.18);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            transition: transform 320ms ease, opacity 300ms ease;
+        }
+
+        .essay-card h3.section-title {
+            border-left: 8px solid var(--strawberry);
+            padding-left: 8px;
+            font-size: 20px;
+            color: var(--matcha);
+            margin-top:0;
+            margin-bottom:10px;
+        }
+
+        .essay-card p { margin:10px 0; line-height:1.55; color:#4b3a36; }
+
+        /* Controls */
+        .controls-row { display:flex; gap:12px; margin-top:8px; align-items:center; flex-wrap:wrap; }
+        .music-btn, .toggle-btn {
+            padding:8px 12px; border-radius:8px; border:none; cursor:pointer; font-weight:700;
+            background-color: var(--strawberry); color:white;
+        }
+        .toggle-btn { background-color: var(--matcha); }
+
+        /* volume slider look */
+        .volume-row { display:flex; gap:8px; align-items:center; }
+        .volume-row input[type="range"] { width:120px; }
+
+        /* responsive adjustments: scale images to container width */
+        @media (max-width:520px) {
+            .photo-size, .thumb { width: 100%; height: auto; aspect-ratio: 16/13; }
+            .overlay-small { font-size:12px; }
+            .logo-title img { width:46px; height:46px; }
+            .search-box input[type="text"]{ width:120px; }
+            .logo-title { font-size:28px; }
+        }
+    </style>
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="top-bar">
+    <div class="logo-title">
+        <img src="berrycat.png" alt="Berrycat Icon">
+        Nuriy's <span>Resume</span>
+    </div>
+
+    <form class="search-box" onsubmit="return false;">
+        <input type="text" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrapper">
+    <div class="main-nav">
+        <a href="HOME.html">Home</a>
+        <a href="AboutMe.html">About Me</a>
+        <a href="Edu.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="social.html">Social Media</a>
+        
+    </div>
+</div>
+
+<!-- INFO -->
+<div class="info-bar">
+    <marquee behavior="scroll" direction="left" scrollamount="8">
+        ૮๑ˊ ꒳ ˋ๑ა Welcome to my Matcha Strawberry themed resume! Learn about <b>me</b>, my <u>experience</u>, <i>education</i>, family & more! 🍓🍵
+    </marquee>
+</div>
+
+<!-- CONTENT -->
+<div class="content-wrapper">
+    <div class="card">
+        <section class="intro">
+            <div class="intro-text">
+                <h2>Nuriy Najwa bt Muhd Nureimy</h2>
+                <p>A passionate UiTM student who is positive and loves learning new things.</p>
+                <a href="https://uitm.edu.my/index.php/en/" target="_blank" rel="noopener">UiTM in My Heart 🍓</a>
+            </div>
+        </section>
+
+        <div class="profile-wrap" aria-live="polite">
+
+            <!-- LEFT: photos column (main + two below) -->
+            <div class="photo-column">
+
+                <!-- MAIN PHOTO (overlay appears on hover / toggle) -->
+                <div class="photo-size main-photo" id="mainPhoto" tabindex="0" role="button" aria-pressed="false" aria-label="Main photo. Click to toggle summary">
+                    <img id="mainImg" src="nuriymatcha.jpg" alt="Photo of Nuriy">
+
+                    <div class="overlay-small" id="overlaySmall" aria-hidden="true">
+                        <strong style="color:var(--matcha); font-size:14px;">Short essay about me</strong>
+                        <div style="font-size:13px; margin-top:6px;">
+                            Soft-spoken yet cheerful. Loves Mofusand cats, matcha & strawberry themes, baking and journaling.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB PHOTOS: the two uploaded pictures to be placed here (STACKED, SAME SIZE) -->
+                <div class="sub-photos" aria-hidden="false">
+                    <div class="thumb" data-src="photo1.jpeg" title="Click to view larger">
+                        <img src="photo1.jpeg" alt="Additional photo 1">
+                    </div>
+                    <div class="thumb" data-src="photo2.jpeg" title="Click to view larger">
+                        <img src="photo2.jpeg" alt="Additional photo 2">
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: essay (stays visible) -->
+            <div class="essay-card" id="essayCard">
+                <h3 class="section-title">Short essay about me</h3>
+
+                <p>
+                    I would describe myself as a soft-spoken yet cheerful person, someone who prefers gentle expression but carries a bright energy wherever I go. Even though I may not always be the loudest in the room, I enjoy bringing positivity through small gestures, warm smiles, and thoughtful conversations.
+                </p>
+
+                <p>
+                    My personality is shaped by a creative and imaginative mind, which often guides the way I see the world. Whether I’m planning something, daydreaming, or working on personal projects, I love exploring ideas beyond the ordinary. With people I trust, my friendly and caring side naturally shows — I enjoy making others feel comfortable, understood, and supported.
+                </p>
+
+                <p>
+                    My interests reflect the softer, more whimsical side of my personality. I absolutely adore cats, especially the charming Mofusand characters that always manage to brighten my day. I’m also drawn to matcha and strawberry-themed things, a combination that feels sweet, calming, and aesthetically pleasing. Baking is another passion of mine; I find comfort in measuring ingredients, watching dough rise, and sharing homemade treats with people around me. Journaling, too, is something I cherish — it gives me space to reflect, express my thoughts, and document little moments that matter.
+                </p>
+
+                <p>
+                    When it comes to food, I always come back to my favourites: Ayam Sambal and Ayam Masak Merah. These dishes remind me of home, warmth, and the joy of eating something flavourful and satisfying. They are the kinds of meals that never fail to lift my mood.
+                </p>
+
+                <p>
+                    Overall, I see myself as someone who finds meaning in small joys, expresses care quietly but sincerely, and embraces a world full of creativity and gentle colours. These little parts of my personality and interests come together to shape who I am — soft-spoken, imaginative, friendly, and always appreciative of the simple things that make life feel special.
+                </p>
+
+                <div class="controls-row">
+                    <button class="toggle-btn" id="toggleBtn" type="button" aria-controls="mainPhoto">Toggle Summary</button>
+
+                    <!-- Music controls -->
+                    <div style="display:flex; gap:10px; align-items:center;">
+                        <button class="music-btn" id="musicBtn" type="button" aria-pressed="false" title="Play or pause background music">Play Music 🎵</button>
+
+                        <div class="volume-row" aria-hidden="false">
+                            <label for="vol" style="font-size:14px; color:#4a3a36; margin-right:6px;">Vol</label>
+                            <input id="vol" type="range" min="0" max="1" step="0.01" value="0.6" aria-label="Volume control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer style="background-color:var(--soft-pink); text-align:center; padding:14px; margin-top:26px; border-top:1px solid #ffd2df;">
+    © 2024 Nuriy's Website. All Rights Reserved.
+</footer>
+
+<!-- AUDIO: uses the file '.mp3' in the same folder -->
+<audio id="bgAudio" src="laufey.mp3" preload="auto" loop></audio>
+
+<script>
+    (function(){
+        const mainPhoto = document.getElementById('mainPhoto');
+        const mainImg = document.getElementById('mainImg');
+        const overlay = document.getElementById('overlaySmall');
+        const toggleBtn = document.getElementById('toggleBtn');
+        const thumbs = document.querySelectorAll('.thumb');
+
+        // Audio elements
+        const musicBtn = document.getElementById('musicBtn');
+        const bgAudio = document.getElementById('bgAudio');
+        const vol = document.getElementById('vol');
+
+        // initialize overlay state
+        setOverlay(false);
+
+        function setOverlay(on) {
+            if (on) {
+                mainPhoto.classList.add('show');
+                overlay.setAttribute('aria-hidden', 'false');
+                mainPhoto.setAttribute('aria-pressed', 'true');
+            } else {
+                mainPhoto.classList.remove('show');
+                overlay.setAttribute('aria-hidden', 'true');
+                mainPhoto.setAttribute('aria-pressed', 'false');
+            }
+        }
+
+        // Photo interactions
+        mainPhoto.addEventListener('click', function(){ setOverlay(!mainPhoto.classList.contains('show')); });
+        mainPhoto.addEventListener('keydown', function(e){
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setOverlay(!mainPhoto.classList.contains('show'));
+            }
+        });
+        toggleBtn.addEventListener('click', function(){
+            setOverlay(!mainPhoto.classList.contains('show'));
+            mainPhoto.focus();
+        });
+
+        thumbs.forEach(function(t){
+            t.addEventListener('click', function(){
+                const newSrc = t.getAttribute('data-src') || t.querySelector('img').src;
+                mainImg.style.transition = 'opacity 200ms ease';
+                mainImg.style.opacity = '0';
+                setTimeout(function(){
+                    mainImg.src = newSrc;
+                    mainImg.style.opacity = '1';
+                }, 200);
+            });
+
+            t.setAttribute('tabindex','0');
+            t.addEventListener('keydown', function(e){
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    t.click();
+                }
+            });
+        });
+
+
+        // Music controls
+        // set initial volume from slider
+        bgAudio.volume = parseFloat(vol.value);
+
+        let playing = false;
+
+        musicBtn.addEventListener('click', function(){
+            // Toggle play/pause
+            if (!playing) {
+                // try to play; user gesture required on some browsers so errors can be ignored
+                bgAudio.play().then(() => {
+                    musicBtn.textContent = 'Pause Music ⏸️';
+                    musicBtn.setAttribute('aria-pressed','true');
+                }).catch(() => {
+                    // If autoplay blocked, still update UI and let user press again.
+                    musicBtn.textContent = 'Pause Music ⏸️';
+                    musicBtn.setAttribute('aria-pressed','true');
+                });
+            } else {
+                bgAudio.pause();
+                musicBtn.textContent = 'Play Music 🎵';
+                musicBtn.setAttribute('aria-pressed','false');
+            }
+            playing = !playing;
+        });
+
+        // volume slider change
+        vol.addEventListener('input', function(){
+            bgAudio.volume = parseFloat(vol.value);
+        });
+
+        // reflect state if audio ended (shouldn't happen due to loop)
+        bgAudio.addEventListener('ended', function(){
+            playing = false;
+            musicBtn.textContent = 'Play Music 🎵';
+            musicBtn.setAttribute('aria-pressed','false');
+        });
+
+        // Close overlay if clicking outside main photo (desktop)
+        document.addEventListener('click', function(e){
+            if (!mainPhoto.contains(e.target) && !toggleBtn.contains(e.target)) {
+                setOverlay(false);
+            }
+        }, true);
+
+    })();
+</script>
+
+</body>
+</html>
