@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8" />
+    <title>My Resume - Nuriy Najwa bt Muhd Nureimy</title>
+
+    <!-- Optional: Google font for logo and headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== GLOBAL ===== */
+        :root{
+            --pink:#ff84a1;
+            --light-pink:#ffe9f0;
+            --accent:#833b44;
+            --bg-accent:#ffdddf;
+            --player-bg: rgba(255,255,255,0.06);
+        }
+
+        *{box-sizing: border-box;}
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("FLOWERPATELS.gif");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #3b2a26;
+            overflow-x: hidden;
+        }
+
+    /* CSS lain awak */
+
+    /* --- NEW CUTE SEARCH BAR STYLE --- */ 
+    .search-box {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .search-box input[type="text"] {
+        padding: 10px 14px;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        width: 220px;
+        background: white;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        font-size: 14px;
+    }
+
+    .search-box button {
+        padding: 10px 18px;
+        border-radius: 25px;
+        border: none;
+        background: #ff84a1;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 14px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        transition: 0.2s;
+    }
+
+    .search-box button:hover {
+        background: #ffadc4;
+        transform: translateY(-2px);
+    }
+
+
+
+        a { text-decoration: none; }
+
+        /* ===== TOP HEADER ===== */
+        .top-bar {
+            background-color: #88c788;
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            width: 100%;
+        }
+
+        .logo-title {
+            font-size: 26px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .logo-title span { color: var(--pink); }
+        .logo-title img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; }
+
+        /* NAV */
+        .nav-wrapper { background-color: var(--light-pink); box-shadow: 0 2px 4px rgba(0,0,0,0.15); }
+        .main-nav{ max-width: 900px; margin: 0 auto; padding: 8px 0; display:flex; justify-content:center; gap:30px;}
+        .main-nav a{ color:#834b55; font-size:15px; font-weight:bold; padding:6px 12px; border-radius:20px; transition:0.2s;}
+        .main-nav a:hover{ background-color:#88c788; color:#fff; }
+
+        /* INFO BAR */
+        .info-bar {
+            background-color: var(--bg-accent);
+            color: var(--accent);
+            text-align: center;
+            padding: 10px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        /* SLIDESHOW */
+        .slideshow-container {
+            max-width: 720px;
+            margin: 18px auto;
+            position: relative;
+            padding: 20px;
+            background: var(--player-bg);
+            border-radius: 12px;
+            backdrop-filter: blur(4px);
+        }
+
+        .mySlides { display: none; }
+        .slide-content { display:flex; flex-direction:column; align-items:center; }
+        .slide-content img { width: 60%; border-radius: 10px; box-shadow: 0 6px 14px rgba(0,0,0,0.15); }
+        .text { margin-top:8px; font-size:14px; color: #833b44; text-align:center; }
+
+        .numbertext{
+            color: #fff; font-weight:bold; position:absolute; top:12px; left:18px; font-size:14px;
+            background-color: rgba(0,0,0,0.35); padding:4px 8px; border-radius:6px;
+        }
+
+        .dots{ text-align:center; margin-top:12px; }
+        .dot{
+            height:12px; width:12px; margin:0 4px; background-color:#bbb; border-radius:50%; display:inline-block;
+            transition: background-color .25s ease;
+        }
+        .active{ background-color: var(--pink); }
+
+        .home-caption{ text-align:center; font-size:35px; color:#FFF0F5; margin-top:14px; opacity:0; animation:fadeIn 1.6s forwards; font-family: 'Palatino Linotype', cursive; }
+        @keyframes fadeIn{ from{opacity:0; transform:translateY(18px)} to{opacity:1; transform:none} }
+
+        /* MUSIC PLAYER */
+        .music-wrapper {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin: 22px 0 8px;
+        }
+
+        .mini-player {
+            width: 720px;
+            max-width: 94%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+            border-radius: 14px;
+            padding: 14px;
+            display:flex;
+            gap:14px;
+            align-items:center;
+            box-shadow: 0 8px 20px rgba(120,50,80,0.06);
+            border: 1px solid rgba(255,255,255,0.04);
+            backdrop-filter: blur(6px);
+            position: relative;
+        }
+
+        /* FOOTER */
+        footer { 
+            background-color: var(--light-pink);
+            text-align:center;
+            padding:12px;
+            margin-top:26px;
+            color: var(--accent);
+            font-size:14px;
+            border-top: 1px solid var(--pink);
+        }
+
+        /* ===== FLOATING STRAWBERRIES ===== */
+        #strawberry-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999999999 !important;
+        }
+
+        .strawberry {
+            position: absolute;
+            bottom: -40px;
+            font-size: 20px;
+            animation: floatUp 7s linear infinite;
+            opacity: 0.9;
+            z-index: 999999999 !important;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="top-bar">
+    <div class="logo-title">
+        <img src="berrycat.png" alt="Berrycat">
+        Nuriy's <span>Resume</span>
+    </div>
+
+  <form class="search-box">
+    <input type="text" placeholder="Search...">
+    <button>Search</button>
+</form>
+
+</div>
+
+<!-- NAV -->
+<div class="nav-wrapper">
+    <div class="main-nav">
+        <a href="HOME.html">Home</a>
+        <a href="AboutMe.html">About Me</a>
+        <a href="Edu.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="social.html">Social Media</a>
+        
+    </div>
+</div>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+    <marquee scrollamount="10">૮๑ˊ ꒳ ˋ๑ა Welcome to my Matcha Strawberry themed resume! 🍓🍵</marquee>
+</div>
+
+<!-- SLIDESHOW -->
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <div class="slide-content">
+            <img src="nuriy3.jpeg" alt="">
+            <div class="text">me with fluffy chuncky cat</div>
+        </div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <div class="slide-content">
+            <img src="nuriy1.jpeg" alt="">
+            <div class="text">ain took this for me &lt;3</div>
+        </div>
+    </div>
+
+<div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <div class="slide-content">
+            <img src="nuriy4.jpeg" alt="">
+            <div class="text">at familymart &lt;3</div>
+        </div>
+    </div>
+
+<div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <div class="slide-content">
+            <img src="nuriy5.jpeg" alt="">
+            <div class="text">me in pink &lt;3</div>
+        </div>
+    </div>
+
+<div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <div class="slide-content">
+            <img src="nuriy6.jpeg" alt="">
+            <div class="text">selfie <3  &lt;3</div>
+        </div>
+    </div>
+
+
+<div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <div class="slide-content">
+            <img src="nuriy7.jpeg" alt="">
+            <div class="text">just me ;> &lt;3</div>
+        </div>
+    </div>
+
+<div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <div class="slide-content">
+            <img src="nuriy8.jpeg" alt="">
+            <div class="text"> jonker walk selfie </div>
+        </div>
+    </div>
+
+<div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <div class="slide-content">
+            <img src="nuriy9.jpeg" alt="">
+            <div class="text"> me being neopolitan icecream &lt;3</div>
+        </div>
+    </div>
+
+
+<div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <div class="slide-content">
+            <img src="nuriy10.jpeg" alt="">
+            <div class="text"> pwettyy me >< </div>
+        </div>
+    </div>
+
+
+<div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <div class="slide-content">
+            <img src="nuriy11.jpeg" alt="">
+            <div class="text"> strawberry head </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+
+    </div>
+
+    <div class="home-caption">Welcome to my little world of pastel dreams 🍓🍵</div>
+</div>
+
+<!-- MUSIC PLAYER -->
+<div class="music-wrapper">
+    <div class="mini-player">
+        <audio id="bgAudio" src="ILLIT.mp3" autoplay></audio>
+        <p style="color:white;">Now Playing: ILLIT - Magnetic 🎵</p>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2024 Nuriy's Website. All Rights Reserved.
+</footer>
+
+<!-- FLOATING STRAWBERRIES CONTAINER -->
+<div id="strawberry-container"></div>
+
+<!-- STRAWBERRY SCRIPT -->
+<script>
+function createStrawberry(){
+    const s = document.createElement("div");
+    s.classList.add("strawberry");
+    s.innerHTML = "🍓";
+
+    s.style.left = Math.random() * 100 + "vw";
+    s.style.fontSize = (18 + Math.random()*20) + "px";
+    s.style.animationDuration = (5 + Math.random()*4) + "s";
+
+    document.getElementById("strawberry-container").appendChild(s);
+
+    setTimeout(() => s.remove(), 8000);
+}
+
+setInterval(createStrawberry, 600);
+</script>
+
+<script>
+let slideIndex = 0;
+function showSlides() {
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+
+    for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+
+    slideIndex++;
+    if (slideIndex > slides.length) slideIndex = 1;
+
+    slides[slideIndex-1].style.display = "block";
+
+    for (let i = 0; i < dots.length; i++) dots[i].className = dots[i].className.replace(" active", "");
+    dots[slideIndex-1].className += " active";
+
+    setTimeout(showSlides, 2500);
+}
+showSlides();
+</script>
+
+</body>
+</html>
+
+
